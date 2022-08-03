@@ -127,6 +127,8 @@ export default {
     getData() {
       let { user_name, name, sex } = this.formSearch
 
+      // TODO: 把this.pageSize,this.currentPage,user_name,name,sex传到后台查询数据
+
       axios.get('/data/users.json').then((res) => {
         let arr = res.data
         if (!Array.isArray(arr)) return
@@ -181,11 +183,13 @@ export default {
       this.deleteDialogVisible = true
     },
     updateData() {
+      // TODO: 把this.selectedRow传到后台修改数据
       alert(`update row id : ${this.selectedRow.id} `)
       this.editDialogVisible = false
       this.getData()
     },
     deleteData() {
+      // TODO: 把this.selectedRow.id传到后台删除数据
       alert(`delete row id : ${this.selectedRow.id} `)
       this.deleteDialogVisible = false
       this.getData()

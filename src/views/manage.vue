@@ -43,6 +43,7 @@ export default {
   },
   methods: {
     go_home() {
+      // TODO: 清除登录状态
       this.$router.push('manage')
     },
   },

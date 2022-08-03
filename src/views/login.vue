@@ -59,6 +59,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          // TODO: 把this.user上传到后台进行验证
           this.$router.push('manage')
         } else {
           console.log('error submit!!')
