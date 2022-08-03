@@ -1,5 +1,6 @@
 <template>
   <div class="user_list_page">
+    <!-- 搜索栏 -->
     <el-container class="search_bar">
       <el-form :inline="true" :model="formSearch">
         <el-form-item label="用户名">
@@ -20,10 +21,12 @@
         </el-form-item>
       </el-form>
     </el-container>
+
+    <!-- 展示表格 -->
     <el-table :data="tableData" style="width: 100%" border highlight-current-row>
       <el-table-column type="expand">
         <template slot-scope="props">
-          <el-form label-position="left" inline class="demo-table-expand">
+          <el-form label-position="left" inline class="table-expand">
             <el-form-item label="性别">
               <span>{{ props.row.sex }}</span>
             </el-form-item>
@@ -46,6 +49,8 @@
         </template>
       </el-table-column>
     </el-table>
+
+    <!-- 分布控件 -->
     <el-container>
       <el-pagination
         @size-change="handleSizeChange"
@@ -58,6 +63,8 @@
       >
       </el-pagination>
     </el-container>
+
+    <!-- 修改信息对话框 -->
     <el-dialog title="修改信息" :visible.sync="editDialogVisible" width="500px">
       <el-form :model="selectedRow" label-width="100px">
         <el-form-item label="用户名" prop="user_name">
@@ -88,6 +95,7 @@
       </div>
     </el-dialog>
 
+    <!-- 删除对话框 -->
     <el-dialog title="删除提示" :visible.sync="deleteDialogVisible" width="300px" center>
       <span>确定删除吗？</span>
       <span slot="footer" class="dialog-footer">
@@ -97,21 +105,6 @@
     </el-dialog>
   </div>
 </template>
-
-<style>
-.demo-table-expand {
-  font-size: 0;
-}
-.demo-table-expand label {
-  width: 90px;
-  color: #99a9bf;
-}
-.demo-table-expand .el-form-item {
-  margin-right: 0;
-  margin-bottom: 0;
-  width: 50%;
-}
-</style>
 
 <script>
 import axios from 'axios'
@@ -205,7 +198,16 @@ export default {
 </script>
 
 <style lang="less">
-.demo-table-expand {
+.table-expand {
   padding-left: 20px;
+}
+.table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 50%;
 }
 </style>

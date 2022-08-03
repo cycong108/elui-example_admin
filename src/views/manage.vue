@@ -54,7 +54,6 @@ export default {
 
 .el-header {
   background-color: #343a40;
-
   line-height: calc(~'@{headerHeight}');
   padding: 0px;
   display: flex;
@@ -67,10 +66,8 @@ export default {
 }
 
 .el-aside {
-  // background-color: #545c64;
   color: #c2c7d0;
   overflow-x: hidden;
-  // line-height: calc(~'100vh - @{headerHeight}');
 }
 
 .el-main {
