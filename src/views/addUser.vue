@@ -24,12 +24,7 @@
           </el-form-item>
           <el-form-item label="出生日期">
             <el-col :span="16">
-              <el-date-picker
-                type="date"
-                placeholder="选择日期"
-                v-model="user.born_date"
-                style="width: 100%"
-              ></el-date-picker>
+              <el-date-picker type="date" placeholder="选择日期" v-model="user.born_date" style="width: 100%"></el-date-picker>
             </el-col>
           </el-form-item>
           <el-form-item label="个人简介">
@@ -77,6 +72,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          // TODO: 把this.user上传到后台
           this.$refs[formName].resetFields()
           alert('添加用户成功!')
         } else {
